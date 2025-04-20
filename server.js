@@ -33,6 +33,11 @@ app.use("/api/donations", require("./routes/donations"));
 
 app.use("/api/payment", paymentRoutes);
 
+// Проверочный корневой маршрут
+app.get("/", (req, res) => {
+  res.json({ message: "GoodDeeds API работает!" });
+});
+
 
 // Запуск сервера
 app.listen(port, () => {
